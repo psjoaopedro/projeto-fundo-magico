@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const cssCode = document.getElementById('css-code')
     const preview = document.getElementById('preview-section')
 
+    textArea.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        document.getElementById('generate-btn').click();
+    }
+});
+
     form.addEventListener('submit', async function (event) {
         event.preventDefault()
 
